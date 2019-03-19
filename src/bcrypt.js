@@ -1,4 +1,3 @@
-'use strict';
 const bcrypt = require('bcryptjs');
 /* 'password' 'bo-password' 'charlie-password' 'sam-password' 'lex-password' 'ping-password' */
 bcrypt.hash('bo-password', 12).then(hash => console.log({ hash }));

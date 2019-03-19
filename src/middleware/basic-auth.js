@@ -1,5 +1,3 @@
-'use strict';
-
 //const bcrypt = require('bcryptjs');
 const AuthService = require('../auth/auth-service');
 
@@ -19,24 +17,25 @@ function requireAuth(req, res, next) {
     return res.status(401).json({ error: 'Unauthorized Request' });
   }
 
-  req.app.get('db')('thingful_users')
-    .where({user_name: tokenUserName})
+  req.app
+    .get('db')('users')
+    .where({ user_name: tokenUserName })
     .first()
     .then(user => {
-      if(!user) {
-        return res.status(401).json({error: 'Unathorized request'});
+      if (!user) {
+        return res.status(401).json({ error: 'Unathorized request' });
       }
-      return AuthService.comparePasswords(tokenPassword, user.password)
-        .then(passwordsMatch => {
+      return AuthService.comparePasswords(tokenPassword, user.password).then(
+        passwordsMatch => {
           if (!passwordsMatch) {
             return res.status(401).json({ error: 'Unauthorized Request' });
           }
           req.user = user;
           next();
-        });    
+        }
+      );
     })
     .catch(next);
-
 }
 
 module.exports = {

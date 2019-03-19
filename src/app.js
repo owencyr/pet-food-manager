@@ -1,4 +1,3 @@
-'use strict';
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
@@ -19,7 +18,6 @@ app.use(
 );
 app.use(cors());
 app.use(helmet());
-
 
 // app.use('/api/things', thingsRouter);
 // app.use('/api/reviews', reviewsRouter);
