@@ -5,4 +5,4 @@ CREATE TABLE brands (
 
 ALTER TABLE foods
   ADD COLUMN
-    brand TEXT references brands(name);
+    brand INTEGER references brands(id);
