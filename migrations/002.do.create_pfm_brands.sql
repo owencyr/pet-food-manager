@@ -5,4 +5,4 @@ CREATE TABLE brands (
 
 ALTER TABLE foods
   ADD COLUMN
-    brand INTEGER references brands(id);
+    brand INTEGER NOT NULL references brands(id);
