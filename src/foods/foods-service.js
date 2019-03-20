@@ -1,4 +1,3 @@
-const xss = require('xss');
 const Treeize = require('treeize');
 
 const FoodsService = {
@@ -56,18 +55,7 @@ const FoodsService = {
     // only accepts arrays of objects, and we want to use a single
     // object.
     const foodData = foodTree.grow([food]).getData()[0];
-    // return db('foods').select(
-    //   'foods.id',
-    //   'foods.variety',
-    //   'foods.kcal',
-    //   'foods.grade',
-    //   'foods.brand',
-    //   'foods.i1',
-    //   'foods.i2',
-    //   'foods.i3',
-    //   'foods.i4',
-    //   'foods.i5',
-    //   'foods.rating'
+
     return {
       id: foodData.id,
       variety: foodData.variety,
