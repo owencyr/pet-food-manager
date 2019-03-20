@@ -56,37 +56,54 @@ const FoodsService = {
     // only accepts arrays of objects, and we want to use a single
     // object.
     const foodData = foodTree.grow([food]).getData()[0];
-
+    // return db('foods').select(
+    //   'foods.id',
+    //   'foods.variety',
+    //   'foods.kcal',
+    //   'foods.grade',
+    //   'foods.brand',
+    //   'foods.i1',
+    //   'foods.i2',
+    //   'foods.i3',
+    //   'foods.i4',
+    //   'foods.i5',
+    //   'foods.rating'
     return {
       id: foodData.id,
-      title: xss(foodData.title),
-      content: xss(foodData.content),
-      date_created: foodData.date_created,
-      user: foodData.user || {}
-    };
-  },
-
-  serializeFoodReviews(reviews) {
-    return reviews.map(this.serializeFoodReview);
-  },
-
-  serializeFoodReview(review) {
-    const reviewTree = new Treeize();
-
-    // Some light hackiness to allow for the fact that `treeize`
-    // only accepts arrays of objects, and we want to use a single
-    // object.
-    const reviewData = reviewTree.grow([review]).getData()[0];
-
-    return {
-      id: reviewData.id,
-      rating: reviewData.rating,
-      food_id: reviewData.food_id,
-      text: xss(reviewData.text),
-      user: reviewData.user || {},
-      date_created: reviewData.date_created
+      variety: foodData.variety,
+      kcal: foodData.kcal,
+      grade: foodData.grade,
+      brand: foodData.brand,
+      i1: foodData.i1,
+      i2: foodData.i2,
+      i3: foodData.i3,
+      i4: foodData.i4,
+      i5: foodData.i5,
+      rating: foodData.rating
     };
   }
+
+  //   serializeFoodReviews(reviews) {
+  //     return reviews.map(this.serializeFoodReview);
+  //   },
+
+  //   serializeFoodReview(review) {
+  //     const reviewTree = new Treeize();
+
+  //     // Some light hackiness to allow for the fact that `treeize`
+  //     // only accepts arrays of objects, and we want to use a single
+  //     // object.
+  //     const reviewData = reviewTree.grow([review]).getData()[0];
+
+  //     return {
+  //       id: reviewData.id,
+  //       rating: reviewData.rating,
+  //       food_id: reviewData.food_id,
+  //       text: xss(reviewData.text),
+  //       user: reviewData.user || {},
+  //       date_created: reviewData.date_created
+  //     };
+  //   }
 };
 
 const userFields = [

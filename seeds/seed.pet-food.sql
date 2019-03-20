@@ -2,14 +2,6 @@
 
 BEGIN;
 
-TRUNCATE
-  ratings,
-  ingredients,
-  brands,
-  users,
-  foods
-  RESTART IDENTITY CASCADE;
-
 INSERT INTO brands (company)
 VALUES
 ('Royal Canin'),
@@ -36,13 +28,11 @@ VALUES
 ('chicken', 120, 'A', 3, 2, 4, 6, 8, 10, 1),
 ('turkey', 115, 'A', -4, 1, 3, 5, 7, 9, 2);
 
-
 INSERT INTO users (user_name, full_name, nickname, password)
 VALUES
 ('guy123', 'Guy-Manuel de Homem-Cristo', 'goldguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y'),
 ('guy456', 'Garrett Douglas', 'someguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y'),
 ('guy789', 'Baker Mayfield', 'ourguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y');
-
 
 INSERT INTO ratings (rating, userId, foodId)
 VALUES
