@@ -15,15 +15,14 @@ const RatingsService = {
   },
 
   insertRating(db, newRating) {
-    return (
-      db
-        .insert(newRating)
-        .into('ratings')
-        .returning('*')
-      // .then(([rating]) => rating)
-        .then(ratings => ratings[0])
-        .then(rating => RatingsService.getById(db, rating.id))
-    );
+    return db
+      .insert(newRating)
+      .into('ratings')
+      .returning('*');
+    // .then(([rating]) => {
+    //   return rating;
+    // })
+    // .then(rating => RatingsService.getById(db, rating.id));
   },
 
   // getReviewsForRating(db, rating_id) {
