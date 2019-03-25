@@ -14,12 +14,12 @@ VALUES
 ('pig', 'a pig', 6),
 ('chicken', 'a chicken', 2),
 ('turkey', 'a turkey', 3),
-('cow', 'a cow', 2),
-('cow', 'desciption', 7),
-('cow', 'deskiptio', 2),
-('cow', 'descripto', 2),
-('cow', 'desukuripushunnu', 2),
-('cow', 'wow', 2);
+('cow5', 'a cow', 2),
+('cow6', 'desciption', 7),
+('cow7', 'deskiptio', 2),
+('cow8', 'descripto', 2),
+('cow9', 'desukuripushunnu', 2),
+('cow0', 'wow', 2);
 
 INSERT INTO foods (variety, kcal, grade, rating, i1, i2, i3, i4, i5, brand)
 VALUES

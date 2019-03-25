@@ -1,6 +1,6 @@
 const express = require('express');
 const FoodsService = require('./foods-service');
-const { requireAuth } = require('../middleware/jwt-auth');
+// const { requireAuth } = require('../middleware/jwt-auth');
 
 const foodsRouter = express.Router();
 

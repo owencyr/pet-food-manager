@@ -22,7 +22,35 @@ const FoodsService = {
     // .leftJoin('foodful_users AS usr', 'foods.user_id', 'usr.id')
     // .groupBy('foods.id', 'usr.id');
   },
-
+  getOneFoodWithIngredients(db, id) {
+    return db('foods')
+      .select(
+        'foods.id AS food_id',
+        'foods.variety',
+        'foods.kcal',
+        'foods.grade',
+        'foods.brand',
+        'foods.i1',
+        'ing_1.name as ing_1_name',
+        ' foods.i2',
+        'ing_2.name as ing_2_name',
+        'foods.i3',
+        'ing_3.name as ing_3_name',
+        'foods.i4',
+        'ing_4.name as ing_4_name',
+        'foods.i5',
+        'ing_5.name as ing_5_name',
+        'foods.rating'
+        // db.raw('count(DISTINCT rev) AS number_of_reviews'),
+        // db.raw('AVG(rev.rating) AS average_review_rating')
+      )
+      .leftJoin('ingredients as ing_1', 'foods.i1', 'ing_1.id')
+      .leftJoin('ingredients as ing_2', 'foods.i2', 'ing_2.id')
+      .leftJoin('ingredients as ing_3', 'foods.i3', 'ing_3.id')
+      .leftJoin('ingredients as ing_4', 'foods.i4', 'ing_4.id')
+      .leftJoin('ingredients as ing_5', 'foods.i5', 'ing_5.id')
+      .where('foods.id', id);
+  },
   getById(db, id) {
     return FoodsService.getAllFoods(db)
       .where('foods.id', id)
@@ -63,10 +91,15 @@ const FoodsService = {
       grade: foodData.grade,
       brand: foodData.brand,
       i1: foodData.i1,
+      // ing_1_name: foodData.ing_1_name,
       i2: foodData.i2,
+      // ing_2_name: foodData.ing_2_name,
       i3: foodData.i3,
+      // ing_3_name: foodData.ing_3_name,
       i4: foodData.i4,
+      // ing_4_name: foodData.ing_4_name,
       i5: foodData.i5,
+      // ing_5_name: foodData.ing_5_name,
       rating: foodData.rating
     };
   }

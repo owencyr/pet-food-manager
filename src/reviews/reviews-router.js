@@ -13,11 +13,11 @@ reviewsRouter
     const { food_id, rating, text } = req.body;
     const newReview = { food_id, rating, text };
 
-    for (const [key, value] of Object.entries(newReview))
-      if (value == null)
-        return res.status(400).json({
-          error: `Missing '${key}' in request body`
-        });
+    // for (const [key, value] of Object.entries(newReview))
+    //   if (value == null)
+    //     return res.status(400).json({
+    //       error: `Missing '${key}' in request body`
+    //     });
     newReview.user_id = req.user.id;
 
     ReviewsService.insertReview(req.app.get('db'), newReview)
