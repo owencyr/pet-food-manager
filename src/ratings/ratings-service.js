@@ -19,6 +19,8 @@ const RatingsService = {
       .insert(newRating)
       .into('ratings')
       .returning('*');
+    //what is the point of these lines?
+    // to provide a related return value
     // .then(([rating]) => {
     //   return rating;
     // })
