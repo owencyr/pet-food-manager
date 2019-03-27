@@ -3,7 +3,7 @@ const Treeize = require('treeize');
 const RatingsService = {
   getAllRatings(db) {
     return db('ratings')
-      .select('ratings.foodid as food_id')
+      .select('ratings.foodid as foodid')
       .sum('ratings.rating as rating')
       .groupBy('ratings.foodid');
   },
@@ -12,6 +12,12 @@ const RatingsService = {
     return RatingsService.getAllRatings(db)
       .where('ratings.id', id)
       .first();
+  },
+
+  getUserRatedFoods(db, userid) {
+    return db('ratings')
+      .select('foodid', 'rating')
+      .where('userid', userid);
   },
 
   insertRating(db, newRating) {
@@ -56,7 +62,8 @@ const RatingsService = {
 
     return {
       rating: ratingData.rating,
-      food_id: ratingData.food_id
+      foodid: ratingData.foodid,
+      userid: ratingData.userid
     };
   }
 

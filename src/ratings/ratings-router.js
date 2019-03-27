@@ -14,11 +14,23 @@ ratingsRouter.route('/').get((req, res, next) => {
 });
 
 ratingsRouter
-  .route('/:food_id')
+  .route('/users')
+  .all(requireAuth)
+  .get((req, res, next) => {
+    RatingsService.getUserRatedFoods(req.app.get('db'), req.query.userid)
+      .then(userRatings =>
+        res.json(RatingsService.serializeRatings(userRatings))
+      )
+      .catch(next);
+  });
+
+ratingsRouter
+  .route('/foods/:food_id')
   .all(requireAuth)
 // here, food_id, user_id, thumb_rating is parsed from client's POST
   .post(jsonBodyParser, (req, res, next) => {
-    RatingsService.insertRating(req.app.get('db'), req.body)
+    console.log(req.query);
+    return RatingsService.insertRating(req.app.get('db'), req.body)
       .then(ratingAsInDB => res.json(ratingAsInDB))
       .catch(next);
   });
