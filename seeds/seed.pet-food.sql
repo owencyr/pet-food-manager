@@ -30,9 +30,9 @@ VALUES
 
 INSERT INTO users (user_name, full_name, nickname, password)
 VALUES
-('guy123', 'Guy-Manuel de Homem-Cristo', 'goldguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y'),
-('guy456', 'Garrett Douglas', 'someguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y'),
-('guy789', 'Baker Mayfield', 'ourguy', '$2y$12$h64XMRckIcZAUJNDWK2efucmRzG4HnUdBFlphdJSLw15v7MiUDr7y');
+('guy123', 'Guy-Manuel de Homem-Cristo', 'goldguy', '$2y$12$Dv1ZTKh3pzW1QCjssNOMmuwjBClUiFbycwOwD73fx4RHAMn.4hx56'),
+('guy456', 'Garrett Douglas', 'someguy', '$2y$12$Dv1ZTKh3pzW1QCjssNOMmuwjBClUiFbycwOwD73fx4RHAMn.4hx56'),
+('guy789', 'Baker Mayfield', 'ourguy', '$2y$12$Dv1ZTKh3pzW1QCjssNOMmuwjBClUiFbycwOwD73fx4RHAMn.4hx56');
 
 INSERT INTO ratings (rating, userId, foodId)
 VALUES
