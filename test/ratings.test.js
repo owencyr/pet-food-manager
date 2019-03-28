@@ -28,6 +28,7 @@ describe('Ratings Router Endpoints', () => {
   before('cleanup', () => helpers.cleanTables(db));
 
   afterEach('cleanup', () => helpers.cleanTables(db));
+
   describe('GET /ratings', () => {
     beforeEach('insert Ratings', () =>
       helpers.seedPetFoodsTables(
@@ -46,6 +47,7 @@ describe('Ratings Router Endpoints', () => {
         return supertest(app)
           .get('/api/ratings')
           .expect(200, expectedSumOfRatings);
+        // .expect(res => expect(res.body).to.equal(expectedSumOfRatings));
       });
     });
   });
@@ -71,6 +73,33 @@ describe('Ratings Router Endpoints', () => {
       });
     });
   });
-
-  it('returns the new user rating on POST /ratings/foods/:foodid');
+  describe('POST /ratings/foods/:foodid', () => {
+    context('given an authorized user making a rating', () => {
+      beforeEach('insert Ratings', () =>
+        helpers.seedPetFoodsTables(
+          db,
+          testBrands,
+          testIngredients,
+          testFoods,
+          testUsers,
+          testRatings
+        )
+      );
+      it('returns the new user rating on POST /ratings/foods/:foodid', () => {
+        const expectedResponse = [
+          {
+            id: 14,
+            rating: 1,
+            userid: 1,
+            foodid: 4,
+            date_rated: '2019-03-29T01:30:19.650Z'
+          }
+        ];
+        supertest(app)
+          .post('/api/ratings/foods/1')
+          .send({ rating: '1', userid: '1', foodid: '4' })
+          .expect(expectedResponse);
+      });
+    });
+  });
 });

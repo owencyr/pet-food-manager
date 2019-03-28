@@ -166,16 +166,16 @@ function makeRatingsArray() {
 function makeSumOfRatingsArray() {
 	return [
 		{
+			rating: '1',
+			foodid: 3
+		},
+		{
 			rating: '-1',
 			foodid: 4
 		},
 		{
 			rating: '-1',
 			foodid: 2
-		},
-		{
-			rating: '1',
-			foodid: 3
 		},
 		{
 			rating: '-1',
