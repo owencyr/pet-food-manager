@@ -29,7 +29,6 @@ ratingsRouter
   .all(requireAuth)
 // here, food_id, user_id, thumb_rating is parsed from client's POST
   .post(jsonBodyParser, (req, res, next) => {
-    console.log(req.query);
     return RatingsService.insertRating(req.app.get('db'), req.body)
       .then(ratingAsInDB => res.json(ratingAsInDB))
       .catch(next);
