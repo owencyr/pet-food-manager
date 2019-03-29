@@ -17,7 +17,7 @@ for a spreadsheet to effectively price shop pet diets. In addition,
 you won't need a pet nutritionist to know what that pet food label
 is really telling you.
 
-#### API Endpoints
+### API Endpoints
 
 All endpoints have serverURL/api/ as root address
 
@@ -44,7 +44,7 @@ Users Router:
 
 - POST /users: Adds a new user to database given valid new user registration entry.
 
-#### Technologies
+### Technologies
 
 Clientside:
 React, HTML, CSS
