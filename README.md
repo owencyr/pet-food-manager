@@ -1,4 +1,4 @@
-# Pet Food Client
+# Pet Food Server
 
 ### https://pet-food-shopper.cyroc.now.sh/
 
