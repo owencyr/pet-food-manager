@@ -2,7 +2,7 @@ const app = require('../src/app');
 const helpers = require('./test-helpers');
 const knex = require('knex');
 
-describe('users Router Endpoints', () => {
+describe('Users Router Endpoints', () => {
   let db;
 
   const {
