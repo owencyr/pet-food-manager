@@ -1,4 +1,5 @@
---psql -U pfm -d pet-food -f ./seeds/seed.pet-food.sql
+-- psql -U pfm -d pet-food -f ./seeds/seed.pet-food.sql
+-- psql -U pfm -d pet-food -f ./seeds/truncate.pet-food.sql
 
 BEGIN;
 
@@ -14,19 +15,19 @@ VALUES
 ('pig', 'a pig', 6),
 ('chicken', 'a chicken', 2),
 ('turkey', 'a turkey', 3),
-('cow5', 'a cow', 2),
-('cow6', 'desciption', 7),
-('cow7', 'deskiptio', 2),
-('cow8', 'descripto', 2),
-('cow9', 'desukuripushunnu', 2),
-('cow0', 'wow', 2);
+('monosodium phosphate', 'a cow', 2),
+('biotin', 'desciption', 7),
+('copper sulfate', 'deskiptio', 2),
+('copper proteinate', 'descripto', 2),
+('L-ascorbyl-2-polyphosphate ', 'source of vitamin C', 2),
+('mixed tocopherols', 'preservative', 2);
 
 INSERT INTO foods (variety, kcal, grade, rating, i1, i2, i3, i4, i5, brand)
 VALUES
-('beef', 130, 'C', 1, 1, 2, 3, 4, 5, 1),
-('pork', 110, 'B', 2, 6, 7, 8, 9, 10, 3),
-('chicken', 120, 'A', 3, 2, 4, 6, 8, 10, 1),
-('turkey', 115, 'A', -4, 1, 3, 5, 7, 9, 2);
+('Protein Selective Dry Cat Food', 130, 'C', 1, 1, 2, 3, 4, 5, 1),
+('Intense Beauty Thin Slices in Gravy Canned Cat Food', 110, 'S', 2, 6, 7, 8, 9, 10, 2),
+('chicken', 120, 'A', 3, 2, 4, 6, 8, 10, 3),
+('turkey', 115, 'A', -4, 1, 3, 5, 7, 9, 1);
 
 INSERT INTO users (user_name, full_name, nickname, password)
 VALUES
