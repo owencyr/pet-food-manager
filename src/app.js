@@ -7,7 +7,6 @@ const { NODE_ENV } = require('./config');
 const foodsRouter = require('./foods/foods-router');
 const ingredientsRouter = require('./ingredients/ingredients-router');
 const ratingsRouter = require('./ratings/ratings-router');
-// const reviewsRouter = require('./reviews/reviews-router');
 const authRouter = require('./auth/auth-router');
 const usersRouter = require('./users/users-router');
 
@@ -24,7 +23,6 @@ app.use(helmet());
 app.use('/api/ingredients', ingredientsRouter);
 app.use('/api/ratings', ratingsRouter);
 app.use('/api/foods', foodsRouter);
-// app.use('/api/reviews', reviewsRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 

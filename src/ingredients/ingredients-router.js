@@ -1,6 +1,5 @@
 const express = require('express');
 const IngredientsService = require('./ingredients-service');
-// const { requireAuth } = require('../middleware/jwt-auth');
 
 const ingredientsRouter = express.Router();
 
