@@ -21,22 +21,27 @@ is really telling you.
 All endpoints have serverURL/api/ as root address
 
 Auth Router:
-POST /auth/login: Authenticates username/password.
-POST /auth/refresh: Given authorized user credentials, sends a new JWT.
+
+- POST /auth/login: Authenticates username/password.
+- POST /auth/refresh: Given authorized user credentials, sends a new JWT.
 
 Food Router:
-GET /foods: Returns 'foods' table from database.
+
+- GET /foods: Returns 'foods' table from database.
 
 Ingredients Router:
-GET /ingredients: Returns 'ingredients' table from database.
+
+- GET /ingredients: Returns 'ingredients' table from database.
 
 Ratings Router:
-GET /ratings: Returns list of sum of all ratings on a per food basis.
-GET /ratings/users?userid=:userid: Returns a list of foods rated by given user.
-POST /ratings/foods/:foodid: Adds new rating to database storing rating userid, rated foodid, and time of rating. Returns the new rating information.
+
+- GET /ratings: Returns list of sum of all ratings on a per food basis.
+- GET /ratings/users?userid=:userid: Returns a list of foods rated by given user.
+- POST /ratings/foods/:foodid: Adds new rating to database storing rating userid, rated foodid, and time of rating. Returns the new rating information.
 
 Users Router:
-POST /users: Adds a new user to database given valid new user registration entry.
+
+- POST /users: Adds a new user to database given valid new user registration entry.
 
 ####Technologies
 Clientside:
